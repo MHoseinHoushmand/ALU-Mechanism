@@ -67,9 +67,9 @@ architecture ALU_act of ALU is
              '0';
       --------------------
        slt <= "00000000000000000000000000000001" when (A_temp(31)='0' and B_temp(31)='0' and B_temp(30 downto 0)>A_temp(30 downto 0)) or 
-		                                                (B_temp(31)='0' and A_temp(31)='1') or 
-																      (A_temp(31)='1' and B_temp(31)='1' and B_temp(30 downto 0)<A_temp(30 downto 0)) else
-             "00000000000000000000000000000000";
+		                                      (B_temp(31)='0' and A_temp(31)='1') or 
+						      (A_temp(31)='1' and B_temp(31)='1' and B_temp(30 downto 0)<A_temp(30 downto 0)) else
+                                                      "00000000000000000000000000000000";
        slt_u <= "00000000000000000000000000000001" when(B_temp(31 downto 0)>A_temp(31 downto 0))else
               "00000000000000000000000000000000";
        and_value <= A_temp(31 downto 0) and B_temp(31 downto 0);
